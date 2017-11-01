@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 // Routing
 import { APP_ROUTING } from './app.routing';
 
+// Http Client module
+import {HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
@@ -14,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule, 
     APP_ROUTING
   ],
   providers: [],
