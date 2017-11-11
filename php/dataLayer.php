@@ -379,7 +379,11 @@
 				}
 				$connection->close();
 				return $objects;
+			} else {
+				return array("MESSAGE" => "404");
 			}
+		} else {
+			return array("MESSAGE" => "500");
 		}
 	}
 ?>
