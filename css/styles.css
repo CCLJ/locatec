@@ -10,3 +10,18 @@ body {
 .navbar-uno {
   background-color: #05668D;
 }
+
+.content {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+footer {
+  height: 60px;
+  background-color: #05668D;
+}
+
+footer span {
+  color: white;
+  line-height: 60px;
+}
