@@ -1,13 +1,9 @@
-<?php
-  setcookie("email", "", time() + 60 * 60 * 24 * 30);
-  setcookie("pwd", "", time() + 60 * 60 * 24 * 30);
-?>
-
 <!Doctype html>
 <html>
 <head>
   <title>Locatec - Login</title>
   <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
   <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
   <script
@@ -17,7 +13,6 @@
   </script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 </head>
 
 <body>
@@ -28,22 +23,29 @@
   </nav>
 
   <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3">Locatec</h1>
+      <p class="lead">Welcome to the lost and found objects directory for ITESM.</p>
+    </div>
+  </div>
+
+  <div class="container">
     <form>
       <div class="form-group">
-        <label for="exampleInputEmail1">Matricula</label>
+        <label for="exampleInputEmail1">School ID</label>
         <input type="email" class="form-control" id="idInput" placeholder="Enter your ID">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input type="password" class="form-control" id="pwdInput" placeholder="Password">
       </div>
       <div class="form-check">
         <label class="form-check-label">
           <input type="checkbox" class="form-check-input">
-          Check me out
+          Remember Me
         </label>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Login</button>
     </form>
   </div>
 
