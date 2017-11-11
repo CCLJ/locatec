@@ -364,7 +364,7 @@
 	function getObjects(){
 		$connection = databaseConnection();
 		if ($connection != null){
-			$sql = "SELECT * FROM Objects WHERE status = not_claimed";
+			$sql = "SELECT * FROM Objects WHERE status = 'not_claimed'";
 			$results = $connection -> query($sql);
 			if ($results > 0){
 				while ($row = $results->fetch_assoc()) {
