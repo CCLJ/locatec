@@ -12,7 +12,12 @@ $(document).ready( function(){
     dataType: "json",
     success: function(dataJson) {
       var newHtml = "";
+      // se agregan opciones a la navigation bar dependiendo del rol
+      if(dataJson.role == "user") {
+        
+      } else {
 
+      }
     },
     error: function(erroMsg) {
       alert(erroMsg.statusText);
