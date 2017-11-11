@@ -40,21 +40,21 @@ $(document).ready( function(){
           "uRemember": remember
         };
 
-        // $.ajax({
-        //   url: "./files/loginService.php",
-        //   type: "POST",
-        //   data: jsonToSend,
-        //   ContentType: "application/json",
-        //   dataType: "json",
-        //   success: function(dataJson) {
-        //     // firstname and lastname are the specified keys on the array in php
-        //     alert("Welcome back: " + dataJson.firstname + " " + dataJson.lastname);
-        //     document.location.href = "home.html";
-        //   },
-        //   error: function(erroMsg) {
-        //     alert(erroMsg.statusText);
-        //   }
-        // });
+        $.ajax({
+          url: "./php/applicationLayer.php",
+          type: "POST",
+          data: jsonToSend,
+          ContentType: "application/json",
+          dataType: "json",
+          success: function(dataJson) {
+            // firstname and lastname are the specified keys on the array in php
+            alert("Welcome back: " + dataJson.firstname + " " + dataJson.lastname);
+            document.location.href = "home.html";
+          },
+          error: function(erroMsg) {
+            alert(erroMsg.statusText);
+          }
+        });
         console.log(jsonToSend);
       } else {
         if(username == "") {
