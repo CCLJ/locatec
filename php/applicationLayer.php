@@ -39,6 +39,9 @@
 		case "REJECTREQUEST":
 						rejectRequestFunction();
 						break;
+		case "LOAD-OBJECTS":
+						loadObjects();
+						break;
 	}
 
 	function loginFunction()
@@ -271,6 +274,17 @@
 			echo json_encode($rejectResponse);
 		} else {
 			genericErrorFunction($rejectResponse["MESSAGE"]);
+		}
+	}
+
+//Nuevo *******************************************************************************
+	function loadObjects() {
+		session_start();
+		$Objects = getObjects();
+		if ($Objects["MESSAGE"] == "SUCCESS"){
+			echo json_encode($Objects);
+		} else {
+			genericErrorFunction($Objects["MESSAGE"]);
 		}
 	}
 
