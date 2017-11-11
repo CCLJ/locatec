@@ -34,6 +34,7 @@
 				{
 					$response = array("firstname"=>$row["fName"],
                             "lastname"=>$row["lName"],
+														"role"=>$row["role"],
                             "MESSAGE"=>"SUCCESS");
 				}
 				$connection->close();

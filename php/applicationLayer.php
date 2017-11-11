@@ -59,6 +59,7 @@
 
       session_start();
       $_SESSION["mail"] = $uName;
+			$_SESSION["role"] = $loginResponse["role"]
       if($uRemember == "true") {
         setcookie("email", $uName, time()+ 60 * 60 * 24 * 30);
         setcookie("pwd", $uPassword, time()+ 60 * 60 * 24 * 30);
