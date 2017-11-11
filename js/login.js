@@ -49,6 +49,7 @@ $(document).ready( function(){
           dataType: "json",
           success: function(dataJson) {
             // firstname and lastname are the specified keys on the array in php
+            console.log(dataJson);
             alert("Welcome back: " + dataJson.firstname + " " + dataJson.lastname);
             document.location.href = "home.html";
           },
