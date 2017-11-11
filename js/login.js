@@ -37,7 +37,8 @@ $(document).ready( function(){
           // uName is the email
           "uName": username,
           "uPassword": password,
-          "uRemember": remember
+          "uRemember": remember,
+          "action" : "LOGIN"
         };
 
         $.ajax({
