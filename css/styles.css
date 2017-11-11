@@ -1,10 +1,15 @@
 /* blue, gray, white, green */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-family: Verdana, sans-serif;
   font-size: 13px;
   color: #4F545F;
-  margin: 0;
-  padding: 0;
+  min-height: 100vh;
+  margin-bottom: 60px;
 }
 
 .navbar-uno {
@@ -14,10 +19,16 @@ body {
 .content {
   margin-top: 5%;
   margin-bottom: 5%;
+  padding-bottom: 5%;
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
   height: 60px;
+  line-height: 60px; /* Vertically center the text there */
   background-color: #05668D;
 }
 
