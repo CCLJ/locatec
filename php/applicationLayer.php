@@ -281,7 +281,7 @@
 	function loadObjects() {
 		session_start();
 		$Objects = getObjects();
-		if ($Objects["MESSAGE"] == "SUCCESS"){
+		if ($Objects[0]["MESSAGE"] == "SUCCESS"){
 			echo json_encode($Objects);
 		} else {
 			genericErrorFunction($Objects["MESSAGE"]);
