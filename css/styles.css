@@ -36,3 +36,7 @@ footer span {
   color: white;
   line-height: 60px;
 }
+
+.error {
+  color: red;
+}

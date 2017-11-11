@@ -1,3 +1,6 @@
+<?php
+  // setcookie("user", "", time() + 60 * 60 * 24 * 30);
+?>
 <!Doctype html>
 <html>
 <head>
@@ -32,16 +35,16 @@
     </div>
 
     <div class="container">
-      <form id="loginForm">
+      <!-- <form > -->
         <div class="form-group">
           <label for="exampleInputEmail1">School ID</label>
           <input type="email" class="form-control" id="idInput" placeholder="Enter your ID">
-          <span id="userloginError"></span>
+          <span class="error" id="userloginError"></span>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="pwdInput" placeholder="Password">
-          <span id="pwdloginError"></span>
+          <input type="password" class="form-control" id="pwdInput" placeholder="Enter your password">
+          <span class="error" id="pwdloginError"></span>
         </div>
         <div class="form-check">
           <label class="form-check-label">
@@ -49,8 +52,8 @@
             Remember Me
           </label>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
+        <button type="submit" class="btn btn-primary" id="loginForm">Login</button>
+      <!-- </form> -->
     </div>
   </div>
 
