@@ -55,3 +55,10 @@ INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, p
 VALUES ("Objecto 5", "2017-11-2", "Descripcion de objeto 5", "url dummy", "not_claimed", "A01190549", "admin");
 INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
 VALUES ("Objecto 6", "2017-11-13", "Descripcion de objeto 6", "url dummy", "not_claimed", "A01280704", "admin");
+
+INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
+VALUES ("Objecto 7", "2017-11-11", "Descripcion de objeto 7", "url dummy", "not_claimed", "A01280648", "admin");
+INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
+VALUES ("Objecto 8", "2017-11-2", "Descripcion de objeto 8", "url dummy", "not_claimed", "A01190548", "admin");
+INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
+VALUES ("Objecto 9", "2017-11-10", "Descripcion de objeto 9", "url dummy", "not_claimed", "A01280704", "admin");
