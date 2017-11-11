@@ -40,3 +40,12 @@ footer span {
 .error {
   color: red;
 }
+
+.card {
+  padding-top: 10px;
+  border-color: #02C39A;
+}
+
+.btn-dos {
+  background-color: #02c39a;
+}

@@ -12,6 +12,7 @@ $(document).ready( function(){
     dataType: "json",
     success: function(dataJson) {
       console.log(dataJson);
+      // $(".card-deck").addClass("d-flex flex-wrap");
       var newHtml = "";
       for(var i = 0; i < dataJson.length; i++) {
         newHtml += "<div class='card'> <img class='card-img-top' src='...' alt='Card image cap'>";
@@ -20,7 +21,7 @@ $(document).ready( function(){
         newHtml += '<p class="card-text">' + dataJson[i].description + '</p>';
         newHtml += "<p class='card-text'>Found by: " + dataJson[i].found_by + "</p>";
         newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p>';
-        newHtml += '<div class="card-footer"><button type="button" name="button">Claim</button></div>'
+        newHtml += '<div class="card-footer"><button class="btn btn-dos" type="button" name="button">Claim</button></div>'
         newHtml += "</div></div>";
 
       }
