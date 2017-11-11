@@ -21,8 +21,9 @@ $(document).ready( function(){
         newHtml += "<p class='card-text'>Found by: " + dataJson[i].found_by + "</p>";
         newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p>';
         newHtml += "</div></div>";
-        $("#objectsList").append(newHtml);
+
       }
+      $("#objectsList").append(newHtml);
     },
     error: function(erroMsg) {
       alert(erroMsg.statusText);
