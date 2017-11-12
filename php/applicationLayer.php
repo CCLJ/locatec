@@ -42,6 +42,9 @@
 		case "LOAD-OBJECTS":
 						loadObjects();
 						break;
+		case "LOAD-CLAIMED":
+						claimedObjects();
+						break;
 		case "CHECK-ROLE":
 						checkRole();
 						break;
@@ -285,6 +288,16 @@
 	function loadObjects() {
 		session_start();
 		$Objects = getObjects();
+		if ($Objects[0]["MESSAGE"] == "SUCCESS"){
+			echo json_encode($Objects);
+		} else {
+			genericErrorFunction($Objects["MESSAGE"]);
+		}
+	}
+
+	function claimedObjects() {
+		session_start();
+		$Objects = getClaimedObjects();
 		if ($Objects[0]["MESSAGE"] == "SUCCESS"){
 			echo json_encode($Objects);
 		} else {
