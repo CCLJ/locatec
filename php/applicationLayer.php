@@ -48,6 +48,9 @@
 		case "CHECK-ROLE":
 						checkRole();
 						break;
+		case "LOAD-USERS":
+						loadUsers();
+						break;
 	}
 
 	function loginFunction()
@@ -118,6 +121,9 @@
 		  case "418" : header("HTTP/1.1 418 Couldn't erase request from DB");
 		 	  		 die("Something went wrong, request not deleted");
 		 		  	 break;
+		  case "420" : header("HTTP/1.1 420 No users in DB");
+ 					   die("There aren't any user in the DB");
+ 					   break;
 
 		}
 	}
@@ -312,6 +318,16 @@
 			echo json_encode(array("role"=>"user"));
 		} else {
 			echo json_encode(array("role"=>"admin"));
+		}
+	}
+
+	function loadUsers(){
+		session_start();
+		$userList = getUsers();
+		if ($userList[0]["MESSAGE"] == "SUCCESS"){
+			echo json_encode($userList);
+		} else {
+			genericErrorFunction($userList[0]["MESSAGE"]);
 		}
 	}
 
