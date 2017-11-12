@@ -105,3 +105,7 @@ thead {
 .opt {
   color: #f0f3bd;
 }
+
+.card img {
+  max-width: 200px;
+}
