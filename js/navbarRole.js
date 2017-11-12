@@ -17,7 +17,6 @@ $(document).ready( function(){
       // se agregan opciones a la navigation bar dependiendo del rol
       if(dataJson.role != "user") {
         newHtml += '<li class="nav-item"> <a class="nav-link" href="home.html">Home</a></li>';
-        newHtml += '<li class="nav-item"> <a class="nav-link" href="profile.html">Profile</a></li>';
         newHtml += '<li class="nav-item"> <a class="nav-link" href="claimed.html">Claimed Objects</a></li>';
         newHtml += '<li class="nav-item"> <a class="nav-link" href="Users.html">Users</a></li>';
         newHtml += '<li class="nav-item"> <a class="nav-link" href="newObject.html">New Entry</a></li>';
