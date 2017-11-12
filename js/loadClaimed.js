@@ -21,7 +21,7 @@ $(document).ready( function(){
         newHtml += "<p class='card-text'>Found by: " + dataJson[i].found_by + "</p>";
         newHtml += "<p class='card-text'>Claimed by: " + dataJson[i].claimed_by + "</p>"
         newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p>';
-        newHtml += '</div><div class="card-footer"><button class="btn btn-dos" data-toggle="modal" data-target="#exampleModal" type="button" name="userInfo data-toggle="modal" data-target="#exampleModal"">See ' + dataJson[i].claimed_by + ' profile</button></div>';
+        newHtml += '</div><div class="card-footer"><button class="btn btn-dos" type="button" name="userInfo">See ' + dataJson[i].claimed_by + ' profile</button></div>';
         newHtml += "</div>";
       }
       $("#objectsList").append(newHtml);
@@ -33,7 +33,7 @@ $(document).ready( function(){
 
   $(".btn-dos").on("click", function() {
 
-    
+
 
   });
 

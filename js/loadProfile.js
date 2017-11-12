@@ -1,6 +1,5 @@
 $(document).ready( function(){
 
-  // load cookie info into text fields
   var jsonToSend = {
     "action" : "LOAD-PROFILE"
   };
@@ -12,8 +11,8 @@ $(document).ready( function(){
     dataType: "json",
     success: function(dataJson) {
       console.log(dataJson);
-      // $(".card-deck").addClass("d-flex flex-wrap");
       var newHtml = "";
+      
     },
     error: function(erroMsg) {
       alert(erroMsg.statusText);

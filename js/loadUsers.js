@@ -15,15 +15,14 @@ $(document).ready( function(){
       newHtml += "<tbody>";
       for (var i = 0; i < dataJson.length; i++) {
         newHtml += "<tr>";
-        newHtml += "<td>" + dataJson[i].institution_id + "</th>"
-        newHtml += "<td>" + dataJson[i].fName + "</th>"
-        newHtml += "<td>" + dataJson[i].lName + "</th>"
-        newHtml += "<td>" + dataJson[i].email + "</th>"
-        newHtml += "<td> <button class='btn btn-primary selectUser' type='button' name='button'>See profile</button></th>"
+        newHtml += "<td name='id'>" + dataJson[i].institution_id + "</td>"
+        newHtml += "<td name='fname'>" + dataJson[i].fName + "</td>"
+        newHtml += "<td name='lname'>" + dataJson[i].lName + "</td>"
+        newHtml += "<td name='email'>" + dataJson[i].email + "</td>"
+        newHtml += "<td > <input  class='btn btn-primary selectUser' type='submit' value='See profile'></td>"
         newHtml += "</tr>"
       }
       newHtml += "</tbody>";
-      console.log(newHtml);
       $("#objectsList").append(newHtml);
     },
     error: function(erroMsg) {
@@ -31,5 +30,13 @@ $(document).ready( function(){
     }
   });
 
+  $(".selectUser").on("click", function() {
+    console.log("click");
+    var currentRow = $(this).closest("tr");
+    var email = currentRow.find("td:eq(3)").text();
+    console.log(email);
+    localStorage.setItem("who", email);
+    document.location.href = "profile.html";
+  });
 
 });
