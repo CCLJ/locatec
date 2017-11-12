@@ -54,6 +54,9 @@
 		case "LOAD-PROFILE":
 						loadProfile();
 						break;
+		case "LOAD-USER":
+						loadUser();
+						break;
 	}
 
 	function loginFunction()
@@ -352,4 +355,22 @@
 			genericErrorFunction($profile[0]["MESSAGE"]);
 		}
 	}
+
+	function loadUser() {
+		session_start();
+		$role = $_SESSION["role"];
+		if($role == "admin"){
+			$user = $_POST["mail"];
+		} else {
+			$user = $_SESSION["mail"];
+		}
+		$profile = getUser($user);
+		if ($profile["MESSAGE"] == "SUCCESS"){
+			echo json_encode($profile);
+		} else {
+			genericErrorFunction($profile["MESSAGE"]);
+		}
+	}
+
+
 ?>

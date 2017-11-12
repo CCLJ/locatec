@@ -469,4 +469,28 @@
 			return array(array("MESSAGE"=>"500"));
 		}
 	}
+
+	function getUser($user) {
+		$connection = databaseConnection();
+		if($connection != null){
+			$sql = "SELECT * FROM Users WHERE email = '$user'";
+			$results = $connection -> query($sql);
+			if ($results > 0) {
+				while($row = $results->fetch_assoc()){
+					$profile = array("fname" => $row["fName"],
+														 "lname" => $row["lName"],
+														 "email" => $row["email"],
+													 	 "institution_id" => $row["institution_id"],
+														 "MESSAGE" => "SUCCESS");
+				}
+				$connection -> close();
+				return $profile;
+			} else {
+				$connection->close();
+				return array(array("MESSAGE"=>"410"));
+			}
+		} else {
+			return array(array("MESSAGE"=>"500"));
+		}
+	}
 ?>
