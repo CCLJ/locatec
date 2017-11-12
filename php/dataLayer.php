@@ -388,6 +388,10 @@
 		}
 	}
 
+	function date_sort($a, $b){
+		return strtotime($b["date_claimed"]) - strtotime($a["date_claimed"]);
+	}
+
 	function getClaimedObjects(){
 		$connection = databaseConnection();
 		if ($connection != null){
@@ -398,6 +402,7 @@
 					$objects[] = array("id" => $row["id"],
 														 	"name" => $row["name"],
 														 	"date_found" => $row["date_found"],
+															"date_claimed" => $row["date_claimed"],
 															"description" => $row["description"],
 															"imageURL" => $row["imageURL"],
 															"found_by" => $row["found_by"],
@@ -405,6 +410,7 @@
 															"posted_by" => $row["posted_by"],
 															"MESSAGE" => "SUCCESS");
 				}
+				usort($objects, "date_sort");
 				$connection->close();
 				return $objects;
 			} else {
