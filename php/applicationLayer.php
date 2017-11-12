@@ -133,6 +133,9 @@
 		  case "420" : header("HTTP/1.1 420 No users in DB");
  					   die("There aren't any user in the DB");
  					   break;
+			case "421" : header("HTTP/1.1 421 No objects retrieve");
+						die("No objects with such characteristics");
+						break;
 
 		}
 	}

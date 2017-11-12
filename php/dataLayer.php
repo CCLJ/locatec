@@ -497,7 +497,30 @@
 	function getSearchResult($key){
 		$connection = databaseConnection();
 		if ($connection != null){
-			
+			$sql = "SELECT * FROM Objects WHERE name = '$key'
+																		OR date_found = '$key'
+																		OR description LIKE '%{$key}%'"
+			$results = $connection -> query($sql);
+			if ($results > 0){
+				while($row = $results-> fetch_assoc()){
+					$objects[] = array("id" => $row["id"],
+														 	"name" => $row["name"],
+														 	"date_found" => $row["date_found"],
+															"date_claimed" => $row["date_claimed"],
+															"description" => $row["description"],
+															"imageURL" => $row["imageURL"],
+															"found_by" => $row["found_by"],
+															"claimed_by" => $row["claimed_by"],
+															"posted_by" => $row["posted_by"],
+															"MESSAGE" => "SUCCESS");
+				}
+				$connection -> close();
+				return $objects;
+			} else {
+				return array(array("MESSAGE" => "421"));
+			}
+		} else {
+			return array(array("MESSAGE" => "500"));
 		}
 	}
 ?>
