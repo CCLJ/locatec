@@ -51,6 +51,9 @@
 		case "LOAD-USERS":
 						loadUsers();
 						break;
+		case "LOAD-PROFILE":
+						loadProfile();
+						break;
 	}
 
 	function loginFunction()
@@ -121,6 +124,9 @@
 		  case "418" : header("HTTP/1.1 418 Couldn't erase request from DB");
 		 	  		 die("Something went wrong, request not deleted");
 		 		  	 break;
+			case "419" : header("HTTP/1.1 419 Query error");
+						die("Query error");
+						break;
 		  case "420" : header("HTTP/1.1 420 No users in DB");
  					   die("There aren't any user in the DB");
  					   break;
@@ -331,4 +337,19 @@
 		}
 	}
 
+	function loadProfile() {
+		session_start();
+		$role = $_SESSION["role"];
+		if($role == "admin"){
+			$user = $_POST["user"];
+		} else {
+			$user = $_SESSION["mail"];
+		}
+		$profile = getProfile($user);
+		if ($profile[0]["MESSAGE"] == "SUCCESS"){
+			echo json_encode($profile);
+		} else {
+			genericErrorFunction($profile[0]["MESSAGE"]);
+		}
+	}
 ?>

@@ -437,4 +437,29 @@
 			return array(array("MESSAGE" => "500"));
 		}
 	}
+
+	function getProfile($user){
+		$connection = databaseConnection();
+		if($connection != null){
+			$sql = "SELECT * FROM Users, Objects WHERE claimed_by = institution_id AND email = '$user'";
+			$results = $connection -> query($sql);
+			if ($results > 0){
+				while($row = $results->fetch_assoc()){
+					$profile[] = array("name" => $row["name"],
+														 "date_found" => $row["date_found"],
+													 	"date_claimed" => $row["date_claimed"],
+														"imageURL" => $row["imageURL"],
+														"found_by" => $row["found_by"],
+														"posted_by" => $row["posted_by"],
+														"MESSAGE" => "SUCCESS");
+				}
+				$connection -> close();
+				return $profile;
+			} else {
+				return array(array("MESSAGE"=>"419"));
+			}
+		} else {
+			return array(array("MESSAGE"=>"500"));
+		}
+	}
 ?>
