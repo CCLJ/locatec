@@ -11,7 +11,6 @@ $(document).ready( function(){
     ContentType: "application/json",
     dataType: "json",
     success: function(dataJson) {
-      console.log(dataJson);
       // $(".card-deck").addClass("d-flex flex-wrap");
       var newHtml = "";
       for(var i = 0; i < dataJson.length; i++) {

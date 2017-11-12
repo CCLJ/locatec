@@ -11,7 +11,6 @@ $(document).ready( function(){
     ContentType: "application/json",
     dataType: "json",
     success: function(dataJson) {
-      console.log(dataJson);
       var newHtml = "";
       console.log(dataJson);
       // se agregan opciones a la navigation bar dependiendo del rol

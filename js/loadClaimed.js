@@ -11,7 +11,6 @@ $(document).ready( function(){
     ContentType: "application/json",
     dataType: "json",
     success: function(dataJson) {
-      console.log(dataJson);
       var newHtml = "";
       for(var i = 0; i < dataJson.length; i++) {
         newHtml += "<div class='card'> <img class='card-img-top' src='...' alt='Card image cap'>";
