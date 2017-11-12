@@ -51,7 +51,6 @@ $(document).ready( function(){
       ContentType: "application/json",
       dataType: "json",
       success: function(dataJson) {
-        var newHtml = "";
         console.log(dataJson);
         document.location.href = "profile.html";
       },
