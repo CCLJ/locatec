@@ -142,6 +142,9 @@
 			case "421" : header("HTTP/1.1 421 No objects retrieve");
 						die("No objects with such characteristics");
 						break;
+			case "422" : header("HTTP/1.1 422 Couldn't insert new object");
+						die("Couldn't insert new object");
+						break;
 
 		}
 	}

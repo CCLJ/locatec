@@ -551,6 +551,8 @@
 								VALUES ('$name', '$date', '$desc', 'url dummy', 'not_claimed', '$by', 'admin')";
 				if ($connection -> query($sql) === TRUE){
 					$response = array("MESSAGE" => "SUCCESS");
+				} else {
+					return array("MESSAGE" => "422");
 				}
 			} else {
 				return array("MESSAGE" => "421");
