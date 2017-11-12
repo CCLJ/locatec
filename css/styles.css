@@ -73,7 +73,9 @@ footer span {
   column-count: 3;
 }
 
-
+.objects {
+  max-width: 200px;
+}
 /*.row {
    display: flex;
    flex-wrap: wrap;

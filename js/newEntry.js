@@ -24,8 +24,6 @@ $(document).ready( function(){
           "action" : "NEW-OBJECT"
         };
 
-        console.log(jsonToSend);
-
         $.ajax({
           url: "./php/applicationLayer.php",
           type: "POST",
@@ -34,6 +32,7 @@ $(document).ready( function(){
           dataType: "json",
           success: function(dataJson) {
             // firstname and lastname are the specified keys on the array in php
+            console.log(dataJson);
             alert("Object succesfully posted");
             document.location.href = "home.html";
           },

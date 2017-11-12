@@ -240,11 +240,14 @@
 			$sql = "SELECT COUNT(id) as cont FROM Objects";
 			$results = $connection -> query($sql);
 			$row = $results -> fetch_assoc();
-			$amount_of_objects = intval($row["cont"]) + 1;
 
+			$amount_of_objects = intval($row["cont"]) + 1;
+			$amount_of_objects = strval($amount_of_objects);
 			$new_image_name = $amount_of_objects . $image_name;
+
 			move_uploaded_file($_FILES["image"]["tmp_name"], "objects/".$new_image_name);
 
+			// poner $new_image_name en el campo de imageURL
 			$date = date("Y-m-d");
 			$sql = "INSERT INTO Objects (name, date_found, description, imageURL, status, found_by, posted_by)
 							VALUES ('$name', '$date', '$desc', '$new_image_name', 'not_claimed', '$by', 'admin')";

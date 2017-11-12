@@ -13,8 +13,10 @@ $(document).ready( function(){
     success: function(dataJson) {
       var newHtml = "";
       for(var i = 0; i < dataJson.length; i++) {
-        var imageSrc = "http://localhost/Locatec/objects/" + dataJson.imageURL;
-        newHtml += "<div class='card'> <img class='card-img-top' src="  + imageSrc + " alt='Card image cap'>";
+        // console.log(dataJson[i].imageURL);
+        var imageSrc = 'http://localhost/Locatec/objects/' + dataJson[i].imageURL;
+        var fakeImage = 'img/fake.png';
+        newHtml += '<div class="card"> <img class="card-img-top objects" src='  + fakeImage + ' alt="Card image cap">';
         newHtml += '<div class="card-block">';
         newHtml += '<h4 class="card-title">' + dataJson[i].name + '</h4>';
         newHtml += '<p class="card-text">' + dataJson[i].description + '</p>';

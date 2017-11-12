@@ -45,7 +45,7 @@
     </div>
 
     <div class="container">
-      <form method="post" action="applicationLayer.php" enctype="multipart/form-data">
+      <!-- <form id="formEntry" method="post" action="applicationLayer.php" enctype="multipart/form-data"> -->
         <div class="form-group">
           <label for="exampleInputEmail1">Object Name</label>
           <input type="text" class="form-control" id="nameInput" placeholder="Enter a short name">
@@ -62,11 +62,11 @@
           <span class="error" id="foundError"></span>
         </div>
         <div class="form-group">
-          <label for="imageObj" class="form-check-label">Select Image</label>
+          <label for="imageObj">Select Image</label>
           <input type="file" class="form-control-file" name="image" id="imageObj">
         </div>
-        <button type="submit" class="btn btn-primary" id="newEntry">Post Object</button>
-      </form>
+        <input type="submit" class="btn btn-primary" name="submit" value="Post Object" id="newEntry">
+      <!-- </form> -->
     </div>
   </div>
 

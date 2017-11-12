@@ -224,16 +224,17 @@
 		$found_by = $_POST["uFoundBy"];
 		$image_name = $_FILES["image"]["name"];
 
-		if($_FILES["image"]["type"] != "image/png" && $_FILES["image"]["type"] != "image/jpg") {
-			genericErrorFunction("424");
-		} else {
+		// echo json_encode($_FILES["image"]["name"]);
+		// if($_FILES["image"]["type"] != "image/png" && $_FILES["image"]["type"] != "image/jpg") {
+		// 	genericErrorFunction("424");
+		// } else {
 			$result = insertNewObject($object_name, $object_desc, $found_by, $image_name);
 			if($result["MESSAGE"] == "SUCCESS"){
 				echo json_encode($result);
 			} else {
 				genericErrorFunction($result);
 			}
-		}
+		// }
 	}
 
 	function logout() {
