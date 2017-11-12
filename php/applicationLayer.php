@@ -295,9 +295,9 @@
 	function checkRole() {
 		session_start();
 		if($_SESSION["role"] == "user") {
-			return array("role"=>"user");
+			echo array("role"=>"user");
 		} else {
-			return array("role"=>"admin");
+			echo array("role"=>"admin");
 		}
 	}
 
