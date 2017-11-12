@@ -399,16 +399,32 @@
 			$results = $connection -> query($sql);
 			if ($results > 0){
 				while ($row = $results->fetch_assoc()) {
-					$objects[] = array("id" => $row["id"],
-														 	"name" => $row["name"],
-														 	"date_found" => $row["date_found"],
-															"date_claimed" => $row["date_claimed"],
-															"description" => $row["description"],
-															"imageURL" => $row["imageURL"],
-															"found_by" => $row["found_by"],
-															"claimed_by" => $row["claimed_by"],
-															"posted_by" => $row["posted_by"],
-															"MESSAGE" => "SUCCESS");
+					session_start();
+					if($_SESSION["role"] == "admin"){
+						$objects[] = array("id" => $row["id"],
+															 	"name" => $row["name"],
+															 	"date_found" => $row["date_found"],
+																"date_claimed" => $row["date_claimed"],
+																"description" => $row["description"],
+																"imageURL" => $row["imageURL"],
+																"found_by" => $row["found_by"],
+																"claimed_by" => $row["claimed_by"],
+																"posted_by" => $row["posted_by"],
+																"role" => "admin",
+																"MESSAGE" => "SUCCESS");
+					} else {
+						$objects[] = array("id" => $row["id"],
+															 	"name" => $row["name"],
+															 	"date_found" => $row["date_found"],
+																"date_claimed" => $row["date_claimed"],
+																"description" => $row["description"],
+																"imageURL" => $row["imageURL"],
+																"found_by" => $row["found_by"],
+																"claimed_by" => $row["claimed_by"],
+																"posted_by" => $row["posted_by"],
+																"role" => "user",
+																"MESSAGE" => "SUCCESS");
+					}
 				}
 				usort($objects, "date_sort");
 				$connection->close();
