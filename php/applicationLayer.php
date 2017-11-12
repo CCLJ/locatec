@@ -34,7 +34,7 @@
 						postNewObject();
 						break;
 		case "LOGOUT":
-						logout()
+						logout();
 						break;
 	}
 

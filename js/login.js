@@ -2,7 +2,7 @@ $(document).ready( function(){
 
   // load cookie info into text fields
   // $.ajax({
-  //   url: "./files/loadUserService.php",
+  //   url: "./php/applicationLayer.php",
   //   type: "POST",
   //   dataType: "json",
   //   success: function(dataJson) {
