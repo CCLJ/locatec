@@ -31,9 +31,9 @@ $(document).ready( function(){
     }
   });
 
-  $(".btn-dos").on("click", function {
+  $(".btn-dos").on("click", function() {
 
-
+    
 
   });
 
