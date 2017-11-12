@@ -233,7 +233,7 @@
 		}
 	}
 
-	function insertNewObject($name, $desc, $by, $image_name){
+	function insertNewObject($name, $desc, $by, $image_name, $url){
 		// move_uploaded_files()
 		$connection = databaseConnection();
 		if ($connection != null){
@@ -249,12 +249,12 @@
 
 			// $imagetmp = addslashes(file_get_contents($_FILES['image']['tmp_name']));
 
-			move_uploaded_file($_FILES["image"]["tmp_name"], "objects/".$new_image_name);
+			//move_uploaded_file($_FILES["image"]["tmp_name"], "objects/".$new_image_name);
 
 			// poner $new_image_name en el campo de imageURL
 			$date = date("Y-m-d");
 			$sql = "INSERT INTO Objects (name, date_found, description, imageURL, status, found_by, posted_by)
-							VALUES ('$name', '$date', '$desc', '$new_image_name', 'not_claimed', '$by', 'admin')";
+							VALUES ('$name', '$date', '$desc', '$url', 'not_claimed', '$by', 'admin')";
 			if ($connection -> query($sql) === TRUE){
 				return array("MESSAGE" => "SUCCESS");
 			} else {

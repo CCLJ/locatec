@@ -9,6 +9,9 @@ $(document).ready( function(){
       var objName = $("#nameInput").val();
       var objDescription = $("#descInput").val();
       var foundBy = $("#foundByInput").val();
+      var objImage = $("#imageObj").val();
+      objImage = objImage.substr(12);
+      console.log(objImage);
 
       if(objName != "" && objDescription != "" && foundBy != "") {
         // names in the service - php file
@@ -21,6 +24,7 @@ $(document).ready( function(){
           "uName": objName,
           "uDescription": objDescription,
           "uFoundBy": foundBy,
+          "url": objImage,
           "action" : "NEW-OBJECT"
         };
 
@@ -34,7 +38,7 @@ $(document).ready( function(){
             // firstname and lastname are the specified keys on the array in php
             console.log(dataJson);
             alert("Object succesfully posted");
-            document.location.href = "home.html";
+            //document.location.href = "home.html";
           },
           error: function(erroMsg) {
             alert(erroMsg.statusText);
