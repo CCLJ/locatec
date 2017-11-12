@@ -533,6 +533,7 @@
 				$connection -> close();
 				return $objects;
 			} else {
+				$connection -> close();
 				return array(array("MESSAGE" => "421"));
 			}
 		} else {
@@ -543,19 +544,15 @@
 	function insertNewObject($name, $desc, $by){
 		$connection = databaseConnection();
 		if ($connection != null){
-			$sql = "SELECT * FROM Objects";
-			$results = $connection -> query($sql);
-			if ($results > 0){
-				$date = date("Y-m-d");
-				$sql = "INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
-								VALUES ('$name', '$date', '$desc', 'url dummy', 'not_claimed', '$by', 'admin')";
-				if ($connection -> query($sql) === TRUE){
-					$response = array("MESSAGE" => "SUCCESS");
-				} else {
-					return array("MESSAGE" => "422");
-				}
+			$date = date("Y-m-d");
+			$sql = "INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
+							VALUES ('Objeto 10', '2017-11-11', 'Descr de objeto 10', 'url dummy', 'not_claimed', 'A01280648', 'admin')";
+			if ($connection -> query($sql) === TRUE){
+				$connection -> close();
+				$response = array("MESSAGE" => "SUCCESS");
 			} else {
-				return array("MESSAGE" => "421");
+				$connection -> close();
+				return array("MESSAGE" => "422");
 			}
 		} else {
 			return array("MESSAGE" => "500");
