@@ -499,7 +499,7 @@
 		if ($connection != null){
 			$sql = "SELECT * FROM Objects WHERE name = '$key'
 																		OR date_found = '$key'
-																		OR description LIKE '%{$key}%'"
+																		OR description LIKE '%{$key}%'";
 			$results = $connection -> query($sql);
 			if ($results > 0){
 				while($row = $results-> fetch_assoc()){
