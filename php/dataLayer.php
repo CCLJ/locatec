@@ -493,4 +493,11 @@
 			return array(array("MESSAGE"=>"500"));
 		}
 	}
+
+	function getSearchResult($key){
+		$connection = databaseConnection();
+		if ($connection != null){
+			
+		}
+	}
 ?>

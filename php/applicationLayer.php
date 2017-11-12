@@ -372,5 +372,16 @@
 		}
 	}
 
+	function searchForObject() {
+		session_start();
+		$key = $_POST["key"];
+		$objects = getSearchResult($key);
+		if ($objects[0]["MESSAGE"] == "SUCCESS"){
+			echo json_encode($objects);
+		} else {
+			genericErrorFunction($objects[0]["MESSAGE"]);
+		}
+	}
+
 
 ?>
