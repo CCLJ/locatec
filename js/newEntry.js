@@ -38,7 +38,7 @@ $(document).ready( function(){
             // firstname and lastname are the specified keys on the array in php
             console.log(dataJson);
             alert("Object succesfully posted");
-            //document.location.href = "home.html";
+            document.location.href = "home.html";
           },
           error: function(erroMsg) {
             alert(erroMsg.statusText);

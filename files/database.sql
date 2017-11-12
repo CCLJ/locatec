@@ -53,23 +53,23 @@ VALUES  ("Luis", "Hernandez", "A00802497", "A00802497@itesm.mx", "user", "user")
 -- INSERTS FOR OBJECTS TABLE
 -- Objetos reclamados
 INSERT INTO Objects(name, date_found, date_claimed, description, imageURL, status, claimed_by, found_by, posted_by)
-VALUES ("Cartera", "2017-11-6", "2017-11-6", "Se encontró en una banca afuera de FoodBox", "url dummy", "claimed", "A01280704", "A01190548", "admin");
+VALUES ("Cartera", "2017-11-6", "2017-11-6", "Se encontró en una banca afuera de FoodBox", "cartera.png", "claimed", "A01280704", "A01190548", "admin");
 INSERT INTO Objects(name, date_found, date_claimed, description, imageURL, status, claimed_by, found_by, posted_by)
-VALUES ("Mochila", "2017-11-6", "2017-11-10", "Mochila negra en Salon A3-304", "url dummy", "claimed", "A01280648", "A01190548", "admin");
+VALUES ("Mochila", "2017-11-6", "2017-11-10", "Mochila gris en Salon A3-304", "mochila.png", "claimed", "A01280648", "A01190548", "admin");
 INSERT INTO Objects(name, date_found, date_claimed, description, imageURL, status, claimed_by, found_by, posted_by)
-VALUES ("Celular", "2017-11-8", "2017-11-4", "Celular olvidado en Jubileo", "url dummy", "claimed", "A00802497", "A01190549", "admin");
+VALUES ("Celular", "2017-11-8", "2017-11-4", "Celular olvidado en Jubileo", "celular.png", "claimed", "A00802497", "A01190549", "admin");
 
 -- Objetos no reclamados
 INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
-VALUES ("iPhone", "2017-11-10", "Estaba en una mesa de Centrales", "url dummy", "not_claimed", "A01280704", "admin");
+VALUES ("iPhone", "2017-11-10", "Estaba en una mesa de Centrales", "iphone7Plus.png", "not_claimed", "A01280704", "admin");
 INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
-VALUES ("Llavero", "2017-11-9", "Lo encontré en el camion entre A3 y Jubileo", "url dummy", "not_claimed", "A01190549", "admin");
+VALUES ("Llavero", "2017-11-9", "Lo encontré en el camino entre A3 y Jubileo", "llaveroDomino.png", "not_claimed", "A01190549", "admin");
 INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
-VALUES ("MacBook", "2017-11-11", "Mac abandonada en 4to piso de Biblioteca", "url dummy", "not_claimed", "A01190548", "admin");
+VALUES ("MacBook", "2017-11-11", "Mac abandonada en 4to piso de Biblioteca", "Macbook15.png", "not_claimed", "A01190548", "admin");
 
 INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
-VALUES ("Cargador", "2017-11-10", "Cargador de celular en 2do piso Cetec", "url dummy", "not_claimed", "A01280648", "admin");
+VALUES ("Cargador", "2017-11-10", "Cargador de macbook en 2do piso Cetec", "cargadorMac.png", "not_claimed", "A01280648", "admin");
 INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
-VALUES ("Sudadera", "2017-11-7", "Sudadera negra en salón A1-203", "url dummy", "not_claimed", "A01190548", "admin");
+VALUES ("Sudadera", "2017-11-7", "Sudadera negra en salón A1-203", "sudadera.png", "not_claimed", "A01190548", "admin");
 INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
-VALUES ("Lonchera", "2017-11-12", "Lonchera olvidada en Carreta", "url dummy", "not_claimed", "A00802497", "admin");
+VALUES ("Lonchera", "2017-11-12", "Lonchera olvidada en Carreta", "lonchera.png", "not_claimed", "A00802497", "admin");
