@@ -15,15 +15,15 @@ $(document).ready( function(){
       console.log(dataJson);
       // se agregan opciones a la navigation bar dependiendo del rol
       if(dataJson.role != "user") {
-        newHtml += '<li class="nav-item"> <a class="nav-link" href="home.html">Home</a></li>';
-        newHtml += '<li class="nav-item"> <a class="nav-link" href="claimed.html">Claimed Objects</a></li>';
-        newHtml += '<li class="nav-item"> <a class="nav-link" href="Users.html">Users</a></li>';
-        newHtml += '<li class="nav-item"> <a class="nav-link" href="newEntry.html">New Entry</a></li>';
+        newHtml += '<li class="nav-item"> <a class="nav-link opt" href="home.html">Home</a></li>';
+        newHtml += '<li class="nav-item"> <a class="nav-link opt" href="claimed.html">Claimed Objects</a></li>';
+        newHtml += '<li class="nav-item"> <a class="nav-link opt" href="Users.html">Users</a></li>';
+        newHtml += '<li class="nav-item"> <a class="nav-link opt" href="newEntry.html">New Entry</a></li>';
       } else {
-        newHtml += '<li class="nav-item"> <a class="nav-link" href="home.html">Home</a></li>';
-        newHtml += '<li class="nav-item"> <a class="nav-link" href="profile.html">Profile</a></li>';
-        newHtml += '<li class="nav-item"> <a class="nav-link" href="claimed.html">Claimed Objects</a></li>';
-        newHtml += '<li class="nav-item"> <a class="nav-link" href="contact.html">Contact Us</a></li>';
+        newHtml += '<li class="nav-item"> <a class="nav-link opt" href="home.html">Home</a></li>';
+        newHtml += '<li class="nav-item"> <a class="nav-link opt" href="profile.html">Profile</a></li>';
+        newHtml += '<li class="nav-item"> <a class="nav-link opt" href="claimed.html">Claimed Objects</a></li>';
+        newHtml += '<li class="nav-item"> <a class="nav-link opt" href="contact.html">Contact Us</a></li>';
       }
       newHtml += '<li class="nav-item"><button type="button" class="btn" id="logout" name="button">Logout</button></li>';
       $("#navbarSupportedContent > ul").append(newHtml);
