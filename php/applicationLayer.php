@@ -57,6 +57,9 @@
 		case "LOAD-USER":
 						loadUser();
 						break;
+		case "SEARCH-OBJECTS":
+						searchForObject();
+						break;
 	}
 
 	function loginFunction()
