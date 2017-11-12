@@ -60,6 +60,9 @@
 		case "SEARCH-OBJECTS":
 						searchForObject();
 						break;
+		case "NEW-OBJECT":
+						postNewObject();
+						break;
 	}
 
 	function loginFunction()
@@ -389,5 +392,18 @@
 		}
 	}
 
+	function postNewObject(){
+		session_start();
+		$object_name = $_POST["uName"];
+		$object_desc = $_POST["uDescription"];
+		$found_by = $_POST["uFoundBy"];
+
+		$result = insertNewObject($object_name, $object_desc, $found_by);
+		if($result["MESSAGE"] == "SUCCESS"){
+			echo json_encode($result);
+		} else {
+			genericErrorFunction($result);
+		}
+	}
 
 ?>

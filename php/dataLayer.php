@@ -539,4 +539,25 @@
 			return array(array("MESSAGE" => "500"));
 		}
 	}
+
+	function insertNewObject($name, $desc, $by){
+		$connection = databaseConnection();
+		if ($connection != null){
+			$sql = "SELECT * FROM Objects";
+			$results = $connection -> query($sql);
+			if ($results > 0){
+				$id = $results;
+				$date = date("Y-m-d");
+				$sql = "INSERT INTO Objects(id, name, date_found, date_claimed, description, imageURL, status, claimed_by, found_by, posted_by)
+								VALUES ('$id', '$name', '$date', NULL, '$desc', 'url dummy', 'not_claimed', '$by', 'admin')";
+				if ($connection -> query($sql) === TRUE){
+					$response = array("MESSAGE" => "SUCCESS");
+				}
+			} else {
+				return array("MESSAGE" => "421");
+			}
+		} else {
+			return array("MESSAGE" => "500");
+		}
+	}
 ?>
