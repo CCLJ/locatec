@@ -30,9 +30,11 @@ $(document).ready( function(){
     }
   });
 
-  $(".btn-dos").on("click", function() {
+  $(".card-deck").on("click", ".btn-dos", function() {
 
-
+    var user = $(".btn-dos").text();
+    user = user.replace("See ", "");
+    user = user.replace(" profile", "@itesm.mx");
 
   });
 
