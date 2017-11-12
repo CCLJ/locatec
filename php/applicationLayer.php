@@ -294,10 +294,11 @@
 
 	function checkRole() {
 		session_start();
-		if($_SESSION["role"] == "user") {
-			echo array("role"=>"user");
+		$user = $_SESSION["role"];
+		if($user == "user") {
+			echo json_encode(array("role"=>"user"));
 		} else {
-			echo array("role"=>"admin");
+			echo json_encode(array("role"=>"admin"));
 		}
 	}
 

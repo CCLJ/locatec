@@ -23,7 +23,6 @@ $(document).ready( function(){
         newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p>';
         newHtml += '<div class="card-footer"><button class="btn btn-dos" type="button" name="button">Claim</button></div>'
         newHtml += "</div></div>";
-
       }
       $("#objectsList").append(newHtml);
     },

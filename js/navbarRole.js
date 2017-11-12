@@ -11,6 +11,7 @@ $(document).ready( function(){
     ContentType: "application/json",
     dataType: "json",
     success: function(dataJson) {
+      console.log(dataJson);
       var newHtml = "";
       console.log(dataJson);
       // se agregan opciones a la navigation bar dependiendo del rol
@@ -30,7 +31,7 @@ $(document).ready( function(){
       newHtml += '<li class="nav-item"><button type="button" name="button">Logout</button></li>';
       $("#navbarSupportedContent > ul").append(newHtml);
     },
-    error: function(erroMsg) {
+    error: function(erroMsg){
       alert(erroMsg.statusText);
     }
   });
