@@ -49,3 +49,18 @@ footer span {
 .btn-dos {
   background-color: #02c39a;
 }
+
+.profile {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+#tabla {
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
+
+#profile {
+  margin-top: auto;
+  margin-bottom: auto;
+}
