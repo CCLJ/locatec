@@ -245,6 +245,10 @@
 			$amount_of_objects = strval($amount_of_objects);
 			$new_image_name = $amount_of_objects . $image_name;
 
+			// $folder="/Applications/MAMP/htdocs/objects/";
+
+			// $imagetmp = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+
 			move_uploaded_file($_FILES["image"]["tmp_name"], "objects/".$new_image_name);
 
 			// poner $new_image_name en el campo de imageURL

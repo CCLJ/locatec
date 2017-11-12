@@ -16,7 +16,7 @@ $(document).ready( function(){
         // console.log(dataJson[i].imageURL);
         var imageSrc = 'http://localhost/Locatec/objects/' + dataJson[i].imageURL;
         var fakeImage = 'img/fake.png';
-        newHtml += '<div class="card"> <img class="card-img-top objects" src='  + fakeImage + ' alt="Card image cap">';
+        newHtml += '<div class="card"> <img class="card-img-top objects" src=' + fakeImage + ' alt="Card image cap">';
         newHtml += '<div class="card-block">';
         newHtml += '<h4 class="card-title">' + dataJson[i].name + '</h4>';
         newHtml += '<p class="card-text">' + dataJson[i].description + '</p>';
