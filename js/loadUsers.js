@@ -19,7 +19,7 @@ $(document).ready( function(){
         newHtml += "<td name='fname'>" + dataJson[i].fName + "</td>"
         newHtml += "<td name='lname'>" + dataJson[i].lName + "</td>"
         newHtml += "<td name='email'>" + dataJson[i].email + "</td>"
-        newHtml += "<td > <input  class='btn btn-primary selectUser' type='submit' value='See profile'></td>"
+        newHtml += "<td > <input class='btn btn-primary selectUser' type='submit' value='See profile'></td>"
         newHtml += "</tr>"
       }
       newHtml += "</tbody>";
@@ -30,7 +30,7 @@ $(document).ready( function(){
     }
   });
 
-  $(".selectUser").on("click", function() {
+  $("#objectsList").on("click", ".selectUser", function() {
     console.log("click");
     var currentRow = $(this).closest("tr");
     var email = currentRow.find("td:eq(3)").text();
