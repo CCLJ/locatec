@@ -35,6 +35,10 @@ $(document).ready( function(){
     var currentRow = $(this).closest("tr");
     var email = currentRow.find("td:eq(3)").text();
     console.log(email);
+    // cuando estes en loadProfile.js, manda este item como parte de jsonToSend
+    // y en el php, revisas si el usuario loggeado es un admin o user
+    // Si es un admin, usa el valor de este item para la query de cargar el perfil
+    // Si es un user, usa el mail guardado en SESSION para la query.
     localStorage.setItem("who", email);
     document.location.href = "profile.html";
   });
