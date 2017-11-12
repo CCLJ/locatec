@@ -19,7 +19,6 @@ $(document).ready( function(){
         newHtml += '<li class="nav-item"> <a class="nav-link" href="claimed.html">Claimed Objects</a></li>';
         newHtml += '<li class="nav-item"> <a class="nav-link" href="Users.html">Users</a></li>';
         newHtml += '<li class="nav-item"> <a class="nav-link" href="newEntry.html">New Entry</a></li>';
-        newHtml += '<li class="nav-item"> <a class="nav-link" href="contact.html">Contact Us</a></li>';
       } else {
         newHtml += '<li class="nav-item"> <a class="nav-link" href="home.html">Home</a></li>';
         newHtml += '<li class="nav-item"> <a class="nav-link" href="profile.html">Profile</a></li>';
