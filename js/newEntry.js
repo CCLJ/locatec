@@ -5,7 +5,7 @@ $(document).ready( function(){
       // ---------------------------------------------------------------------
       var objName = $("#nameInput").val();
       var objDescription = $("#descInput").val();
-      var foundBy = $("#foundBy").val();
+      var foundBy = $("#foundByInput").val();
 
       if(objName != "" && objDescription != "" && foundBy != "") {
         // names in the service - php file

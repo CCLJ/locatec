@@ -546,7 +546,7 @@
 		if ($connection != null){
 			$date = date("Y-m-d");
 			$sql = "INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
-							VALUES ('$name', '$date', '$desc', 'url dummy', 'not_claimed', 'A01280704', 'admin')";
+							VALUES ('$name', '$date', '$desc', 'url dummy', 'not_claimed', '$by', 'admin')";
 			if ($connection -> query($sql) === TRUE){
 				$connection -> close();
 				$response = array("MESSAGE" => "SUCCESS");
