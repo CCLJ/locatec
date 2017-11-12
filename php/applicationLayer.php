@@ -42,6 +42,9 @@
 		case "LOAD-OBJECTS":
 						loadObjects();
 						break;
+		case "CHECK-ROLE":
+						checkRole();
+						break;
 	}
 
 	function loginFunction()
@@ -286,6 +289,15 @@
 			echo json_encode($Objects);
 		} else {
 			genericErrorFunction($Objects["MESSAGE"]);
+		}
+	}
+
+	function checkRole() {
+		session_start();
+		if($_SESSION["role"] == "user") {
+			return array("role"=>"user");
+		} else {
+			return array("role"=>"admin");
 		}
 	}
 
