@@ -414,4 +414,27 @@
 			return array("MESSAGE" => "500");
 		}
 	}
+
+	function getUsers(){
+		$connection = databaseConnection();
+		if ($connection != null){
+			$sql = "SELECT * FROM Users";
+			$results = $connection -> query($sql);
+			if ($results > 0){
+				while($row = $results->fetch_assoc()){
+					$list[] = array("fName" => $row["fName"],
+													"lName" => $row["lName"],
+													"institution_id" => $row["institution_id"],
+													"email" => $row["email"],
+													"MESSAGE" => "SUCCESS");
+				}
+				$connection -> close();
+				return $list;
+			} else {
+				return array(array("MESSAGE" => "420"));
+			}
+		} else {
+			return array(array("MESSAGE" => "500"));
+		}
+	}
 ?>
