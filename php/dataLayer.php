@@ -232,12 +232,13 @@
 		}
 	}
 
-	function insertNewObject($name, $desc, $by){
+	function insertNewObject($name, $desc, $by, $image_name){
+		// move_uploaded_files()
 		$connection = databaseConnection();
 		if ($connection != null){
 			$date = date("Y-m-d");
 			$sql = "INSERT INTO Objects (name, date_found, description, imageURL, status, found_by, posted_by)
-							VALUES ('$name', '$date', '$desc', 'url dummy', 'not_claimed', '$by', 'admin')";
+							VALUES ('$name', '$date', '$desc', '$image_name', 'not_claimed', '$by', 'admin')";
 			if ($connection -> query($sql) === TRUE){
 				return array("MESSAGE" => "SUCCESS");
 			} else {

@@ -14,7 +14,8 @@ CREATE TABLE Objects (
   date_found DATE NOT NULL,
   date_claimed DATE NULL,
   description VARCHAR(120) NOT NULL,
-  imageURL VARCHAR (150) NOT NULL,
+  -- imageURL BLOB NULL,
+  imageURL VARCHAR(150) NULL,
   status VARCHAR(30) NOT NULL,
   claimed_by VARCHAR(15) NULL,
   found_by VARCHAR(15) NULL,
@@ -24,6 +25,14 @@ CREATE TABLE Objects (
   FOREIGN KEY(posted_by) REFERENCES Users(institution_id),
   PRIMARY KEY(id)
 );
+
+-- CREATE TABLE Img {
+--   id INT NOT NULL,
+--   name VARCHAR(50) NOT NULL,
+--   image BLOB NULL,
+--   FOREIGN KEY(id) REFERENCES Objects(id),
+--   PRIMARY KEY(id)
+-- }
 
 
 -- INSERTS FOR USERS TABLE

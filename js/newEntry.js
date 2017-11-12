@@ -1,7 +1,10 @@
 $(document).ready( function(){
 
-  $("#newEntry").on("click",
-    function() {
+  $("form").submit(function(e) {
+    e.preventDefault();
+  });
+
+  $("#newEntry").on("click", function() {
       // ---------------------------------------------------------------------
       var objName = $("#nameInput").val();
       var objDescription = $("#descInput").val();
