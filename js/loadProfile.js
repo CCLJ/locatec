@@ -1,7 +1,9 @@
 $(document).ready( function(){
 
+  var email = localStorage.getItem("who");
   var jsonToSend = {
-    "action" : "LOAD-PROFILE"
+    "action" : "LOAD-PROFILE",
+    "user": email
   };
   $.ajax({
     url: "./php/applicationLayer.php",
@@ -12,7 +14,7 @@ $(document).ready( function(){
     success: function(dataJson) {
       console.log(dataJson);
       var newHtml = "";
-      
+
     },
     error: function(erroMsg) {
       alert(erroMsg.statusText);
