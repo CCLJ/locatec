@@ -23,6 +23,7 @@ $(document).ready( function(){
       } else {
         newHtml += '<li class="nav-item"> <a class="nav-link" href="home.html">Home</a></li>';
         newHtml += '<li class="nav-item"> <a class="nav-link" href="profile.html">Profile</a></li>';
+        newHtml += '<li class="nav-item"> <a class="nav-link" href="claimed.html">Claimed Objects</a></li>';
         newHtml += '<li class="nav-item"> <a class="nav-link" href="contact.html">Contact Us</a></li>';
       }
       newHtml += '<li class="nav-item"><button type="button" class="btn" name="button">Logout</button></li>';
