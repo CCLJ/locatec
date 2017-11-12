@@ -21,6 +21,8 @@ $(document).ready( function(){
           "action" : "NEW-OBJECT"
         };
 
+        console.log(jsonToSend);
+
         $.ajax({
           url: "./php/applicationLayer.php",
           type: "POST",
