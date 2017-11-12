@@ -387,4 +387,31 @@
 			return array("MESSAGE" => "500");
 		}
 	}
+
+	function getClaimedObjects(){
+		$connection = databaseConnection();
+		if ($connection != null){
+			$sql = "SELECT * FROM Objects WHERE status = 'claimed'";
+			$results = $connection -> query($sql);
+			if ($results > 0){
+				while ($row = $results->fetch_assoc()) {
+					$objects[] = array("id" => $row["id"],
+														 	"name" => $row["name"],
+														 	"date_found" => $row["date_found"],
+															"description" => $row["description"],
+															"imageURL" => $row["imageURL"],
+															"found_by" => $row["found_by"],
+															"claimed_by" => $row["claimed_by"],
+															"posted_by" => $row["posted_by"],
+															"MESSAGE" => "SUCCESS");
+				}
+				$connection->close();
+				return $objects;
+			} else {
+				return array("MESSAGE" => "404");
+			}
+		} else {
+			return array("MESSAGE" => "500");
+		}
+	}
 ?>
