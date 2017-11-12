@@ -122,13 +122,11 @@
 			case "422" : header("HTTP/1.1 422 Couldn't insert new object");
 						die("Couldn't insert new object");
 						break;
-<<<<<<< HEAD
-			case "425" : header("HTTP/1.1 425 Image is not png or jpg");
-						die("Image type not correct");
-=======
 			case "423" : header("HTTP/1.1 423 Couldn't refresh the DB");
 						die("The data base couldn't refresh");
->>>>>>> 5c2488ef0804049352a9f12a392f699020bf9346
+						break;
+			case "424" : header("HTTP/1.1 424 Incorrect image file type");
+						die("Image type not right");
 						break;
 
 		}
@@ -224,10 +222,10 @@
 		$object_name = $_POST["uName"];
 		$object_desc = $_POST["uDescription"];
 		$found_by = $_POST["uFoundBy"];
-		$image_name = $FILES["image"]["name"];
+		$image_name = $_FILES["image"]["name"];
 
-		if($FILES["image"]["type"] != "image/png" && $FILES["image"]["type"] != "image/jpg") {
-			genericErrorFunction("425");
+		if($_FILES["image"]["type"] != "image/png" && $_FILES["image"]["type"] != "image/jpg") {
+			genericErrorFunction("424");
 		} else {
 			$result = insertNewObject($object_name, $object_desc, $found_by, $image_name);
 			if($result["MESSAGE"] == "SUCCESS"){

@@ -14,7 +14,8 @@ $(document).ready( function(){
       var newHtml = "";
       for(var i = 0; i < dataJson.length; i++) {
         // newHtml += "<div class='col-md-3>'"
-        newHtml += "<div class='card'> <img class='card-img-top' src='...' alt='Card image cap'>";
+        var imageSrc = "http://localhost/Locatec/objects/" + dataJson.imageURL;
+        newHtml += "<div class='card'> <img class='card-img-top' src="  + imageSrc + " alt='Card image cap'>";
         newHtml += '<div class="card-block">';
         newHtml += '<h4 class="card-title">' + dataJson[i].name + '</h4>';
         newHtml += '<p class="card-text">' + dataJson[i].description + '</p>';
