@@ -11,9 +11,9 @@ $(document).ready( function(){
     ContentType: "application/json",
     dataType: "json",
     success: function(dataJson) {
-      // $(".card-deck").addClass("d-flex flex-wrap");
       var newHtml = "";
       for(var i = 0; i < dataJson.length; i++) {
+        // newHtml += "<div class='col-md-3>'"
         newHtml += "<div class='card'> <img class='card-img-top' src='...' alt='Card image cap'>";
         newHtml += '<div class="card-block">';
         newHtml += '<h4 class="card-title">' + dataJson[i].name + '</h4>';
@@ -22,6 +22,7 @@ $(document).ready( function(){
         newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p>';
         newHtml += '</div><div class="card-footer"><button class="btn btn-dos" type="button" name="button">Claim</button></div>'
         newHtml += "</div>";
+        // newHtml += "</div>";
       }
       $("#objectsList").append(newHtml);
     },

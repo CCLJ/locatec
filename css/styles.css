@@ -68,3 +68,17 @@ footer span {
   margin-top: 15px;
   margin-bottom: 45px;
 }
+
+.card-columns {
+  column-count: 3;
+}
+
+
+/*.row {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.row > div[class*='col-'] {
+  display: flex;
+}*/
