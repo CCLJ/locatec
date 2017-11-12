@@ -33,6 +33,9 @@
 		case "NEW-OBJECT":
 						postNewObject();
 						break;
+		case "LOGOUT":
+						logout()
+						break;
 	}
 
 	function loginFunction()
@@ -216,6 +219,12 @@
 		} else {
 			genericErrorFunction($result);
 		}
+	}
+
+	function logout() {
+		session_start();
+		session_destroy();
+		echo json_encode(array("destroyed"=>"Session destroyed"));
 	}
 
 ?>
