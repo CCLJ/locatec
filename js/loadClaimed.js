@@ -31,10 +31,12 @@ $(document).ready( function(){
   });
 
   $(".card-deck").on("click", ".btn-dos", function() {
-
-    var user = $(".btn-dos").text();
-    user = user.slice(4, 13);
+    var user = $(this).attr("class");
+    user = user.slice(12, 21);
     user += "@itesm.mx";
+    console.log(user);
+    localStorage.setItem("who", user);
+    document.location.href = "profile.html";
   });
 
 
