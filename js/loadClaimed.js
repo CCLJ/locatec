@@ -33,9 +33,8 @@ $(document).ready( function(){
   $(".card-deck").on("click", ".btn-dos", function() {
 
     var user = $(".btn-dos").text();
-    user = user.replace("See ", "");
-    user = user.replace(" profile", "@itesm.mx");
-
+    user = user.slice(4, 13);
+    user += "@itesm.mx";
   });
 
 
