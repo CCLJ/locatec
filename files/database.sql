@@ -68,7 +68,7 @@ INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, p
 VALUES ("MacBook", "2017-11-11", "Mac abandonada en 4to piso de Biblioteca", "url dummy", "not_claimed", "A01190548", "admin");
 
 INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
-VALUES ("Cargador", "2017-11-0", "Cargador de celular en 2do piso Cetec", "url dummy", "not_claimed", "A01280648", "admin");
+VALUES ("Cargador", "2017-11-10", "Cargador de celular en 2do piso Cetec", "url dummy", "not_claimed", "A01280648", "admin");
 INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
 VALUES ("Sudadera", "2017-11-7", "Sudadera negra en salón A1-203", "url dummy", "not_claimed", "A01190548", "admin");
 INSERT INTO Objects(name, date_found, description, imageURL, status, found_by, posted_by)
