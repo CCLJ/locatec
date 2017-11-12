@@ -36,6 +36,9 @@
 		case "LOGOUT":
 						logout();
 						break;
+		case "REFRESH-OBJECT":
+					refreshObject();
+					break;
 	}
 
 	function loginFunction()
@@ -54,6 +57,7 @@
       session_start();
       $_SESSION["mail"] = $uName;
 			$_SESSION["role"] = $loginResponse["role"];
+			$_SESSION["id"] = $loginResponse["id"];
       if($uRemember == "true") {
         setcookie("email", $uName, time()+ 60 * 60 * 24 * 30);
         setcookie("pwd", $uPassword, time()+ 60 * 60 * 24 * 30);
@@ -118,8 +122,13 @@
 			case "422" : header("HTTP/1.1 422 Couldn't insert new object");
 						die("Couldn't insert new object");
 						break;
+<<<<<<< HEAD
 			case "425" : header("HTTP/1.1 425 Image is not png or jpg");
 						die("Image type not correct");
+=======
+			case "423" : header("HTTP/1.1 423 Couldn't refresh the DB");
+						die("The data base couldn't refresh");
+>>>>>>> 5c2488ef0804049352a9f12a392f699020bf9346
 						break;
 
 		}
@@ -235,4 +244,17 @@
 		echo json_encode(array("destroyed"=>"Session destroyed"));
 	}
 
+	function refreshObject(){
+		session_start();
+		$who = $_SESSION["id"];
+		$id = $_POST["id"];
+
+		$refresh = refreshDB($who, $id);
+
+		if ($refresh["MESSAGE"] == "SUCCESS"){
+			echo json_encode($refresh);
+		} else {
+			genericErrorFunction($refresh);
+		}
+	}
 ?>

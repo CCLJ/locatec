@@ -35,6 +35,7 @@
 					$response = array("firstname"=>$row["fName"],
                             "lastname"=>$row["lName"],
 														"role"=>$row["role"],
+														"id" => $row["institution_id"],
                             "MESSAGE"=>"SUCCESS");
 				}
 				$connection->close();
@@ -245,6 +246,24 @@
 				return array("MESSAGE" => "422");
 			}
 		} else {
+			return array("MESSAGE" => "500");
+		}
+	}
+
+	function refreshDB($by, $id){
+		$date = date("Y-m-d");
+		$connection = databaseConnection();
+		if ($connection != null){
+			$sql = "UPDATE Objects SET date_claimed = '$date', status = 'claimed', claimed_by = '$by' WHERE id = '$id'";
+			if ($connection -> query($sql) === TRUE){
+				$connection -> close();
+				return array("MESSAGE" => "SUCCESS");
+			} else {
+				$connection -> close();
+				return array("MESSAGE" => "423");
+			}
+		} else {
+			$connectino -> close();
 			return array("MESSAGE" => "500");
 		}
 	}
