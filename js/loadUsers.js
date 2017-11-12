@@ -38,7 +38,28 @@ $(document).ready( function(){
     // Si es un admin, usa el valor de este item para la query de cargar el perfil
     // Si es un user, usa el mail guardado en SESSION para la query.
     localStorage.setItem("who", email);
-    document.location.href = "profile.html";
+    var email = localStorage.getItem("who");
+    console.log(email);
+    var jsonToSend = {
+      "action" : "LOAD-PROFILE",
+      "mail": email
+    };
+    $.ajax({
+      url: "./php/applicationLayer.php",
+      type: "POST",
+      data: jsonToSend,
+      ContentType: "application/json",
+      dataType: "json",
+      success: function(dataJson) {
+        var newHtml = "";
+        console.log(dataJson);
+        document.location.href = "profile.html";
+      },
+      error: function(erroMsg) {
+        alert(erroMsg.statusText);
+      }
+    });
+
   });
 
 });
