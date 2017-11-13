@@ -1,5 +1,4 @@
 $(document).ready( function(){
-
   // load cookie info into text fields
   var jsonToSend = {
     "action" : "LOAD-CLAIMED"
@@ -35,7 +34,7 @@ $(document).ready( function(){
     }
   });
 
-  $(".card-deck").on("click", ".btn-dos", function() {
+  $("#objectsList").on("click", ".btn-dos", function() {
     var user = $(this).attr("class");
     user = user.slice(12, 21);
     user += "@itesm.mx";
