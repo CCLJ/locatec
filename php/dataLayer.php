@@ -263,28 +263,58 @@
 																		OR found_by = '$key') AND (status = 'not_claimed')";
 			$results = $connection -> query($sql);
 			if ($results > 0){
+				session_start();
 				if ($row = $results-> fetch_assoc()){
-					$objects[] = array("id" => $row["id"],
-															"name" => $row["name"],
-															"date_found" => $row["date_found"],
-															"date_claimed" => $row["date_claimed"],
-															"description" => $row["description"],
-															"imageURL" => $row["imageURL"],
-															"found_by" => $row["found_by"],
-															"claimed_by" => $row["claimed_by"],
-															"posted_by" => $row["posted_by"],
-															"MESSAGE" => "SUCCESS");
-					while($row = $results-> fetch_assoc()){
+					if ($_SESSION["role"] == "admin"){
 						$objects[] = array("id" => $row["id"],
-															 	"name" => $row["name"],
-															 	"date_found" => $row["date_found"],
+																"name" => $row["name"],
+																"date_found" => $row["date_found"],
 																"date_claimed" => $row["date_claimed"],
 																"description" => $row["description"],
 																"imageURL" => $row["imageURL"],
 																"found_by" => $row["found_by"],
 																"claimed_by" => $row["claimed_by"],
 																"posted_by" => $row["posted_by"],
+																"role" => "admin",
 																"MESSAGE" => "SUCCESS");
+						while($row = $results-> fetch_assoc()){
+							$objects[] = array("id" => $row["id"],
+																 	"name" => $row["name"],
+																 	"date_found" => $row["date_found"],
+																	"date_claimed" => $row["date_claimed"],
+																	"description" => $row["description"],
+																	"imageURL" => $row["imageURL"],
+																	"found_by" => $row["found_by"],
+																	"claimed_by" => $row["claimed_by"],
+																	"posted_by" => $row["posted_by"],
+																	"role" => "admin",
+																	"MESSAGE" => "SUCCESS");
+						}
+					} else {
+						$objects[] = array("id" => $row["id"],
+																"name" => $row["name"],
+																"date_found" => $row["date_found"],
+																"date_claimed" => $row["date_claimed"],
+																"description" => $row["description"],
+																"imageURL" => $row["imageURL"],
+																"found_by" => $row["found_by"],
+																"claimed_by" => $row["claimed_by"],
+																"posted_by" => $row["posted_by"],
+																"role" => "user",
+																"MESSAGE" => "SUCCESS");
+						while($row = $results-> fetch_assoc()){
+							$objects[] = array("id" => $row["id"],
+																 	"name" => $row["name"],
+																 	"date_found" => $row["date_found"],
+																	"date_claimed" => $row["date_claimed"],
+																	"description" => $row["description"],
+																	"imageURL" => $row["imageURL"],
+																	"found_by" => $row["found_by"],
+																	"claimed_by" => $row["claimed_by"],
+																	"posted_by" => $row["posted_by"],
+																	"role" => "user",
+																	"MESSAGE" => "SUCCESS");
+						}
 					}
 					$connection -> close();
 					return $objects;
