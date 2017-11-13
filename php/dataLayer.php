@@ -109,7 +109,8 @@
 					$connection->close();
 					return $objects;
 				} else {
-					return array(array("MESSAGE" => "404"));
+					return array(array("name" => "a1s2d3",
+															"MESSAGE" => "SUCCESS"));
 				}
 			} else {
 				return array(array("MESSAGE" => "404"));
