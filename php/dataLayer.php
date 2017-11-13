@@ -288,6 +288,8 @@
 					}
 					$connection -> close();
 					return $objects;
+				} else {
+					return array(array("MESSAGE" => "421"));
 				}
 			} else {
 				return array(array("MESSAGE" => "421"));
