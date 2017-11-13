@@ -21,7 +21,7 @@ $(document).ready( function(){
         newHtml += '<p class="card-text">' + dataJson[i].description + '</p>';
         newHtml += "<p class='card-text'>Found by: " + dataJson[i].found_by + "</p>";
         newHtml += "<p class='card-text'>Claimed by: " + dataJson[i].claimed_by + "</p>"
-        newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p></div>';
+        newHtml += '<p class="card-text"><small class="text-muted">Date claimed: ' + dataJson[i].date_claimed + '</small></p></div>';
         if (dataJson[i].role == "admin"){
           newHtml += '<div class="card-footer"><button class="btn btn-dos ' + dataJson[i].claimed_by + '" type="button" name="userInfo">See ' + dataJson[i].claimed_by + ' profile</button></div>';
         }
