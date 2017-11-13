@@ -77,6 +77,9 @@
 			case "500" : header("HTTP/1.1 500 Bad connection, portal down");
 						 die("The server is down, we couldn't stablish the data base connection.");
 						 break;
+			case "404" : header("HTTP/1.1 404 No object found");
+						die("No objects found in DB");
+						break;
 			case "406" : header("HTTP/1.1 406 User not found.");
 						 die("Wrong credentials provided.");
              break;
@@ -140,7 +143,7 @@
 		if ($Objects[0]["MESSAGE"] == "SUCCESS"){
 			echo json_encode($Objects);
 		} else {
-			genericErrorFunction($Objects["MESSAGE"]);
+			genericErrorFunction($Objects[0]["MESSAGE"]);
 		}
 	}
 

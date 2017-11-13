@@ -62,38 +62,60 @@
 			$results = $connection -> query($sql);
 			if ($results > 0){
 				session_start();
-				if($_SESSION["role"] == "admin"){
-					while ($row = $results->fetch_assoc()) {
+				if ($row = $results->fetch_assoc()){
+					if($_SESSION["role"] == "admin"){
 						$objects[] = array("id" => $row["id"],
-															 	"name" => $row["name"],
-															 	"date_found" => $row["date_found"],
+																"name" => $row["name"],
+																"date_found" => $row["date_found"],
 																"description" => $row["description"],
 																"imageURL" => $row["imageURL"],
 																"found_by" => $row["found_by"],
 																"posted_by" => $row["posted_by"],
 																"role" => "admin",
 																"MESSAGE" => "SUCCESS");
-					}
-				} else {
-					while ($row = $results->fetch_assoc()) {
+						while ($row = $results->fetch_assoc()) {
+							$objects[] = array("id" => $row["id"],
+																 	"name" => $row["name"],
+																 	"date_found" => $row["date_found"],
+																	"description" => $row["description"],
+																	"imageURL" => $row["imageURL"],
+																	"found_by" => $row["found_by"],
+																	"posted_by" => $row["posted_by"],
+																	"role" => "admin",
+																	"MESSAGE" => "SUCCESS");
+						}
+					} else {
 						$objects[] = array("id" => $row["id"],
-															 	"name" => $row["name"],
-															 	"date_found" => $row["date_found"],
+																"name" => $row["name"],
+																"date_found" => $row["date_found"],
 																"description" => $row["description"],
 																"imageURL" => $row["imageURL"],
 																"found_by" => $row["found_by"],
 																"posted_by" => $row["posted_by"],
 																"role" => "user",
 																"MESSAGE" => "SUCCESS");
+						while ($row = $results->fetch_assoc()) {
+							$objects[] = array("id" => $row["id"],
+																 	"name" => $row["name"],
+																 	"date_found" => $row["date_found"],
+																	"description" => $row["description"],
+																	"imageURL" => $row["imageURL"],
+																	"found_by" => $row["found_by"],
+																	"posted_by" => $row["posted_by"],
+																	"role" => "user",
+																	"MESSAGE" => "SUCCESS");
+						}
 					}
+					$connection->close();
+					return $objects;
+				} else {
+					return array(array("MESSAGE" => "404"));
 				}
-				$connection->close();
-				return $objects;
 			} else {
-				return array("MESSAGE" => "404");
+				return array(array("MESSAGE" => "404"));
 			}
 		} else {
-			return array("MESSAGE" => "500");
+			return array(array("MESSAGE" => "500"));
 		}
 	}
 
