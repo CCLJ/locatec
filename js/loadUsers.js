@@ -40,24 +40,25 @@ $(document).ready( function(){
     localStorage.setItem("who", email);
     var email = localStorage.getItem("who");
     console.log(email);
-    var jsonToSend = {
-      "action" : "LOAD-PROFILE",
-      "mail": email
-    };
-    $.ajax({
-      url: "./php/applicationLayer.php",
-      type: "POST",
-      data: jsonToSend,
-      ContentType: "application/json",
-      dataType: "json",
-      success: function(dataJson) {
-        console.log(dataJson);
-        document.location.href = "profile.html";
-      },
-      error: function(erroMsg) {
-        alert(erroMsg.statusText);
-      }
-    });
+    // var jsonToSend = {
+    //   "action" : "LOAD-PROFILE",
+    //   "mail": email
+    // };
+    // $.ajax({
+    //   url: "./php/applicationLayer.php",
+    //   type: "POST",
+    //   data: jsonToSend,
+    //   ContentType: "application/json",
+    //   dataType: "json",
+    //   success: function(dataJson) {
+    //     console.log(dataJson);
+    //     document.location.href = "profile.html";
+    //   },
+    //   error: function(erroMsg) {
+    //     alert(erroMsg.statusText);
+    //   }
+    // });
+    document.location.href = "profile.html";
 
   });
 
