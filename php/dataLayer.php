@@ -176,6 +176,13 @@
 			$results = $connection -> query($sql);
 			if ($results > 0) {
 				if ($row = $results->fetch_assoc()){
+					$profile[] = array("name" => $row["name"],
+														 "date_found" => $row["date_found"],
+														 "date_claimed" => $row["date_claimed"],
+														 "imageURL" => $row["imageURL"],
+														 "found_by" => $row["found_by"],
+														 "posted_by" => $row["posted_by"],
+														 "MESSAGE" => "SUCCESS");
 					while($row = $results->fetch_assoc()){
 						$profile[] = array("name" => $row["name"],
 															 "date_found" => $row["date_found"],
