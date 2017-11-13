@@ -53,7 +53,7 @@ $(document).ready( function(){
         var newHtml = "";
         for(var i = 0; i < dataJson.length; i++) {
           var fakeImage = 'img/' + dataJson[i].imageURL
-          newHtml += '<div class="card"> <img class="card-img-top objects" src=' + fakeImage + ' alt="Card image cap">';
+          newHtml += '<div class="card"> <img class="card-img-top rounded mx-auto d-block objects" src=' + fakeImage + ' alt="Card image cap">';
           newHtml += '<div class="card-block">';
           newHtml += '<h4 class="card-title">' + dataJson[i].name + '</h4>';
           newHtml += '<p class="card-text">' + dataJson[i].description + '</p>';
@@ -107,7 +107,7 @@ $(document).ready( function(){
         for(var i = 0; i < dataJson.length; i++) {
           // newHtml += "<div class='col-md-3>'"
           var fakeImage = 'img/' + dataJson[i].imageURL
-          newHtml += '<div class="card"> <img class="card-img-top objects" src=' + fakeImage + ' alt="Card image cap">';
+          newHtml += '<div class="card"> <img class="card-img-top rounded mx-auto d-block objects" src=' + fakeImage + ' alt="Card image cap">';
           newHtml += '<div class="card-block">';
           newHtml += '<h4 class="card-title">' + dataJson[i].name + '</h4>';
           newHtml += '<p class="card-text">' + dataJson[i].description + '</p>';
