@@ -11,6 +11,7 @@ $(document).ready( function(){
     ContentType: "application/json",
     dataType: "json",
     success: function(dataJson) {
+      console.log(dataJson);
       var newHtml = "";
       for(var i = 0; i < dataJson.length; i++) {
         var imageSrc = 'http://localhost/Locatec/objects/' + dataJson[i].imageURL;
@@ -21,8 +22,10 @@ $(document).ready( function(){
         newHtml += '<h4 class="card-title">' + dataJson[i].name + '</h4>';
         newHtml += '<p class="card-text">' + dataJson[i].description + '</p>';
         newHtml += "<p class='card-text'>Found by: " + dataJson[i].found_by + "</p>";
-        newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p>';
-        newHtml += '</div><div class="card-footer"><button id=' + dataJson[i].id + ' class="btn btn-dos" type="button" name="button">Claim</button></div>'
+        newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p></div>';
+        if (dataJson[i].role == "user"){
+          newHtml += '<div class="card-footer"><button id=' + dataJson[i].id + ' class="btn btn-dos" type="button" name="button">Claim</button></div>'
+        }
         newHtml += "</div>";
         // newHtml += "</div>";
       }
@@ -54,8 +57,10 @@ $(document).ready( function(){
           newHtml += '<h4 class="card-title">' + dataJson[i].name + '</h4>';
           newHtml += '<p class="card-text">' + dataJson[i].description + '</p>';
           newHtml += "<p class='card-text'>Found by: " + dataJson[i].found_by + "</p>";
-          newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p>';
-          newHtml += '</div><div class="card-footer"><button class="btn btn-dos" type="button" name="button">Claim</button></div>'
+          newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p></div>';
+          if (dataJson[i].role == "user"){
+            newHtml += '<div class="card-footer"><button id=' + dataJson[i].id + ' class="btn btn-dos" type="button" name="button">Claim</button></div>'
+          }
           newHtml += "</div>";
         }
         $("#objectsList").html(newHtml);
@@ -100,13 +105,16 @@ $(document).ready( function(){
         var newHtml = "";
         for(var i = 0; i < dataJson.length; i++) {
           // newHtml += "<div class='col-md-3>'"
-          newHtml += "<div class='card'> <img class='card-img-top' src='...' alt='Card image cap'>";
+          var fakeImage = 'img/' + dataJson[i].imageURL
+          newHtml += '<div class="card"> <img class="card-img-top objects" src=' + fakeImage + ' alt="Card image cap">';
           newHtml += '<div class="card-block">';
           newHtml += '<h4 class="card-title">' + dataJson[i].name + '</h4>';
           newHtml += '<p class="card-text">' + dataJson[i].description + '</p>';
           newHtml += "<p class='card-text'>Found by: " + dataJson[i].found_by + "</p>";
-          newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p>';
-          newHtml += '</div><div class="card-footer"><button id=' + dataJson[i].id + ' class="btn btn-dos" type="button" name="button">Claim</button></div>'
+          newHtml += '<p class="card-text"><small class="text-muted">Date found: ' + dataJson[i].date_found + '</small></p></div>';
+          if (dataJson[i].role == "user"){
+            newHtml += '<div class="card-footer"><button id=' + dataJson[i].id + ' class="btn btn-dos" type="button" name="button">Claim</button></div>'
+          }
           newHtml += "</div>";
           // newHtml += "</div>";
         }
