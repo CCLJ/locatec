@@ -38,17 +38,17 @@ $(document).ready( function(){
         });
       } else {
         if(subject == "") {
-          $("#userloginError").text("Missing username");
+          $("#userloginError").text("Missing subject");
         } else {
           $("#userloginError").text("");
         }
         if(message == "") {
-          $("#pwdloginError").text("Missing password");
+          $("#pwdloginError").text("Missing message");
         } else {
           $("#pwdloginError").text("");
         }
         if(emailTo == "") {
-          $("#emailError").text("Missing ID");
+          $("#emailError").text("Missing email");
         } else {
           $("#emailError").text("");
         }
