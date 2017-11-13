@@ -257,15 +257,16 @@
 	function getSearchResult($key){
 		$connection = databaseConnection();
 		if ($connection != null){
-			$sql = "SELECT * FROM Objects WHERE name = '$key'
+			$sql = "SELECT * FROM Objects WHERE (name = '$key'
 																		OR date_found = '$key'
-																		OR description LIKE '%{$key}%'";
+																		OR description LIKE '%{$key}%'
+																		OR found_by = '$key') AND (status = 'not_claimed')";
 			$results = $connection -> query($sql);
 			if ($results > 0){
-				while($row = $results-> fetch_assoc()){
+				if ($row = $results-> fetch_assoc()){
 					$objects[] = array("id" => $row["id"],
-														 	"name" => $row["name"],
-														 	"date_found" => $row["date_found"],
+															"name" => $row["name"],
+															"date_found" => $row["date_found"],
 															"date_claimed" => $row["date_claimed"],
 															"description" => $row["description"],
 															"imageURL" => $row["imageURL"],
@@ -273,9 +274,21 @@
 															"claimed_by" => $row["claimed_by"],
 															"posted_by" => $row["posted_by"],
 															"MESSAGE" => "SUCCESS");
+					while($row = $results-> fetch_assoc()){
+						$objects[] = array("id" => $row["id"],
+															 	"name" => $row["name"],
+															 	"date_found" => $row["date_found"],
+																"date_claimed" => $row["date_claimed"],
+																"description" => $row["description"],
+																"imageURL" => $row["imageURL"],
+																"found_by" => $row["found_by"],
+																"claimed_by" => $row["claimed_by"],
+																"posted_by" => $row["posted_by"],
+																"MESSAGE" => "SUCCESS");
+					}
+					$connection -> close();
+					return $objects;
 				}
-				$connection -> close();
-				return $objects;
 			} else {
 				return array(array("MESSAGE" => "421"));
 			}
